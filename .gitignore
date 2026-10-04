@@ -1,4 +1,5 @@
-.txt
+*.txt
 main
-.png
-.csv
+*.png
+*.csv
+main_dif
