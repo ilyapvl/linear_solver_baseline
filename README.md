@@ -3,7 +3,7 @@
 Две программы:
 
 - `dif.cpp` — численное дифференцирование
-- `main.cpp` — решение систем линейных алгебраических уравнений
+- `slae.cpp` — решение систем линейных алгебраических уравнений
 
 ## Требования
 
@@ -14,7 +14,7 @@
 
 ```bash
 g++ -std=c++20 -O2 dif.cpp -o dif
-g++ -std=c++20 -O2 main.cpp -o main
+g++ -std=c++20 -O2 slae.cpp -o slae
 ```
 
 ## Использование
@@ -29,10 +29,10 @@ g++ -std=c++20 -O2 main.cpp -o main
 - Программа создаёт CSV-файлы для каждой функции: `func1_sin_x2_errors.csv`, ..., `func5_sqrt_x_plus_3_errors.csv`.
 - визуализация: `python3 visualize_dif.py`
 
-### main
+### slae
 
 ```
-./main -i <input_file>
+./slae -i <input_file>
 ```
 
 - `<input_file>` — файл с матрицей A и вектором b.
