@@ -54,7 +54,7 @@ double method5(const std::function<double(double)>& f, double x, double h)
 int main(const int argc, char* argv[])
 {
 
-    const double x0 = std::atoi(argv[1]);
+    const double x0 = std::stod(argv[1]);
 
     std::vector<std::pair<std::string, std::function<double(double)>>> funcs = {
         {"func1_sin_x2", f1},
@@ -87,6 +87,9 @@ int main(const int argc, char* argv[])
 
 
 
+
+
+
         for (int n = 1; n <= 45; n++)
         {
             double h = 2.0 / std::pow(2.0, n);
@@ -101,6 +104,8 @@ int main(const int argc, char* argv[])
             out << "\n";
         }
         
+
+
         out.close();
     }
 

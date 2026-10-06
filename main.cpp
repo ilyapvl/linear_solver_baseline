@@ -369,7 +369,7 @@ static SLAE read_slae(const std::string& fname)
             s.A[i][j] = nums[idx++];
     for (int i = 0; i < n; ++i)
         s.b[i] = nums[idx++];
-        
+
     return s;
 }
 
@@ -438,8 +438,9 @@ int main(int argc, char** argv)
     auto report = [&](const std::string& name, const Vec& x)
     {
         double res = residual_norm(A, x, b);
-        std::cout << std::scientific << std::setprecision(4) << "r = " << res << "\n";
+        
         print_solution_block(name, x);
+        std::cout << std::scientific << std::setprecision(4) << "r = " << res << "\n";
     };
 
     try { report("Gauss", gauss(A, b)); }

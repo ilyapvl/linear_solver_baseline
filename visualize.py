@@ -16,7 +16,6 @@ METHODS = [
 ]
 
 DATA_DIR = Path(".")
-EPS_FLOOR = 1e-300
 
 
 def load_history(path: Path):
@@ -26,7 +25,7 @@ def load_history(path: Path):
     data = np.loadtxt(path, comments="#")
     if data.ndim == 1:
         data = data.reshape(1, -1)
-    return data[:, 0], np.maximum(data[:, 1], EPS_FLOOR)
+    return data[:, 0], data[:, 1]
 
 
 def plot_all(outfile="convergence_log.png", show=True):
