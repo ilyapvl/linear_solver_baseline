@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 from pathlib import Path
 import numpy as np
 import matplotlib.pyplot as plt
@@ -28,7 +26,7 @@ def load_history(path: Path):
     return data[:, 0], data[:, 1]
 
 
-def plot_all(outfile="convergence_log.png", show=True):
+def plot_all():
     fig, ax = plt.subplots(figsize=(11, 7))
     loaded_any = False
 
@@ -49,16 +47,14 @@ def plot_all(outfile="convergence_log.png", show=True):
     ax.yaxis.set_minor_formatter(NullFormatter())
 
     ax.set_xlabel("iteration")
-    ax.set_ylabel(r"residual $\|b - A x\|_2$  (log scale)")
-    ax.set_title("Residual convergence")
+    ax.set_ylabel(r"r in log scale")
+    ax.set_title("Residual")
     ax.grid(True, which="both", ls=":", alpha=0.6)
     ax.legend(loc="best", framealpha=0.9)
 
     fig.tight_layout()
-    fig.savefig(outfile, dpi=150)
-    print(f"saved: {outfile}")
-    if show:
-        plt.show()
+
+    plt.show()
 
 
 def main():
